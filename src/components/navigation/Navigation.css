@@ -1,0 +1,16 @@
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
+footer {
+  background-color: bisque;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
