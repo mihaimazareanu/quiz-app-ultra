@@ -1,0 +1,7 @@
+.Tag {
+  list-style: none;
+  background-color: hotpink;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 0 1rem;
+}

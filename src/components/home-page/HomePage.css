@@ -1,0 +1,10 @@
+.home-page {
+  border: 1px solid #000;
+  border-radius: 10px;
+  height: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: coral;
+  margin: 1rem;
+}

@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,22 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+main {
+  margin-top: 1rem;
+  margin-bottom: 5rem;
+}
+
+.page {
+  /* display: none; */
+  padding: 3rem;
+}
+
+.page.current {
+  display: block;
+}
+
+#root {
+  background-color: cornsilk;
 }

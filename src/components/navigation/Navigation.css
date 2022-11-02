@@ -8,9 +8,10 @@
   text-decoration: none;
 }
 
-footer {
-  background-color: bisque;
+nav {
+  background-color: sandybrown;
   position: fixed;
   bottom: 0;
   width: 100%;
+  height: 4rem;
 }
