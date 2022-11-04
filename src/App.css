@@ -38,13 +38,13 @@
 } */
 
 main {
-  margin-top: 1rem;
   margin-bottom: 5rem;
 }
 
 .page {
   /* display: none; */
   padding: 3rem;
+  margin-top: 1rem;
 }
 
 .page.current {

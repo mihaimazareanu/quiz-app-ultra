@@ -9,6 +9,7 @@
   justify-content: center;
   gap: 1rem;
   padding: 1rem;
+  position: relative;
 }
 
 .Card-container p {
@@ -30,4 +31,12 @@
 
 .question {
   width: 100%;
+}
+
+.top-right {
+  /* background-color: hotpink; */
+  position: absolute;
+  top: -0.8rem;
+  right: 5%;
+  background-color: beige;
 }
