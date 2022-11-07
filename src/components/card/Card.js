@@ -4,36 +4,20 @@ import "./Card.css";
 import { useState } from "react";
 import { Tag } from "../tag/Tag";
 
-export function Card({
-  question,
-  answer,
-  tags,
-  isBookmarked,
-  page,
-  index,
-  handleClickBookmarkIcon,
-}) {
+export function Card({ card, onClickBookmarkIcon }) {
   const [hide, setHide] = useState(true);
 
   return (
-    <article
-      className="Card-container"
-      // style={{
-      //   display:
-      //     page === "bookmark" && bookmarked === isBookmarked
-      //       ? "block"
-      //       : page === "home"
-      //       ? "block"
-      //       : "none",
-      // }}
-    >
+    <article className="Card-container">
       <button
         className="top-right noborder"
-        onClick={() => handleClickBookmarkIcon(index)}
+        onClick={() => {
+          onClickBookmarkIcon();
+        }}
       >
         <img
           src={
-            isBookmarked
+            card.isBookmarked
               ? "assets/bookmark-icon-fullblack.png"
               : "assets/bookmark-icon.png"
           }
@@ -41,7 +25,7 @@ export function Card({
           width="30px"
         ></img>
       </button>
-      <p className="question">{question}</p>
+      <p className="question">{card.question}</p>
       <button
         className="answer-button"
         onClick={() => {
@@ -50,9 +34,9 @@ export function Card({
       >
         {hide ? "Show Answer" : "Hide Answer"}
       </button>
-      <p className={hide ? "hidden" : "answer"}>{answer}</p>
+      <p className={hide ? "hidden" : "answer"}>{card.answer}</p>
       <ul className="Card__taglist">
-        {tags.map((tag, index) => (
+        {card.tags.map((tag, index) => (
           <Tag key={index} tag={tag} />
         ))}
       </ul>

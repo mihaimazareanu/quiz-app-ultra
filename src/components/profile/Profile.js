@@ -1,13 +1,13 @@
 import React from "react";
 import "./Profile.css";
 
-function Profile(props) {
+function Profile({ page }) {
   return (
     <section
       className="page"
       id="profile-page"
       data-js="page-profile"
-      style={{ display: props.page === "profile" ? "block" : "none" }}
+      style={{ display: page === "profile" ? "block" : "none" }}
     >
       <p>Here you will see my details.</p>
     </section>

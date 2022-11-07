@@ -1,20 +1,19 @@
-import { useState } from "react";
 import "./Navigation.css";
 
-function Navigation(props) {
+function Navigation({ page, handleClickPage }) {
   return (
     <nav className="navbar">
       <a
         className="link-home"
         href="#home-page"
-        onClick={() => props.handleClickPage("home")}
+        onClick={() => handleClickPage("home")}
         style={{
-          backgroundColor: props.page === "home" ? "red" : "sandybrown",
+          backgroundColor: page === "home" ? "red" : "sandybrown",
         }}
       >
         <img
           src={
-            props.page === "home"
+            page === "home"
               ? "/assets/home-icon-fullblack.png"
               : "/assets/home-icon.png"
           }
@@ -25,14 +24,14 @@ function Navigation(props) {
       <a
         className="link-bookmark"
         href="#bookmark-page"
-        onClick={() => props.handleClickPage("bookmark")}
+        onClick={() => handleClickPage("bookmark")}
         style={{
-          backgroundColor: props.page === "bookmark" ? "red" : "sandybrown",
+          backgroundColor: page === "bookmark" ? "red" : "sandybrown",
         }}
       >
         <img
           src={
-            props.page === "bookmark"
+            page === "bookmark"
               ? "assets/bookmark-icon-fullblack.png"
               : "assets/bookmark-icon.png"
           }
@@ -43,14 +42,14 @@ function Navigation(props) {
       <a
         className="link-form"
         href="#create-page"
-        onClick={() => props.handleClickPage("create")}
+        onClick={() => handleClickPage("create")}
         style={{
-          backgroundColor: props.page === "create" ? "red" : "sandybrown",
+          backgroundColor: page === "create" ? "red" : "sandybrown",
         }}
       >
         <img
           src={
-            props.page === "create"
+            page === "create"
               ? "/assets/form-icon-fullblack.png"
               : "/assets/form-icon.png"
           }
@@ -61,14 +60,14 @@ function Navigation(props) {
       <a
         className="link-profile"
         href="#profile-page"
-        onClick={() => props.handleClickPage("profile")}
+        onClick={() => handleClickPage("profile")}
         style={{
-          backgroundColor: props.page === "profile" ? "red" : "sandybrown",
+          backgroundColor: page === "profile" ? "red" : "sandybrown",
         }}
       >
         <img
           src={
-            props.page === "profile"
+            page === "profile"
               ? "/assets/profile-icon-fullblack.png"
               : "/assets/profile-icon.png"
           }
