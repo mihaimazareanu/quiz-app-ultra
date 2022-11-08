@@ -1,31 +1,89 @@
 import "./CreatePage.css";
+import { useState } from "react";
+// import { cards } from "../../data/cards";
 
-export default function CreatePage(props) {
+export default function CreatePage({ page, onNewCard, cards }) {
+  const [createdCard, setCreatedCard] = useState(null);
+  const [newQuestion, setNewQuestion] = useState("");
+  const [newAnswer, setNewAnswer] = useState("");
+
+  const handleQuestionInput = (event) => {
+    setNewQuestion(event.target.value);
+  };
+
+  const handleAnswerInput = (event) => {
+    setNewAnswer(event.target.value);
+  };
+
+  const createCard = () => {
+    setCreatedCard({
+      question: newQuestion,
+      answer: newAnswer,
+      tags: [],
+    });
+  };
+
+  const addCreatedCard = () => {
+    onNewCard({
+      id: cards.length === 0 ? 1 : cards[cards.length - 1].id + 1,
+      question: newQuestion,
+      answer: newAnswer,
+      tags: [],
+    });
+  };
+
+  const onSubmitCreatedCard = () => {
+    return (
+      <article className="Card-container">
+        <p>Your question:</p>
+        <p className="question">{newQuestion}</p>
+        <p>Your answer:</p>
+        <p className="answer">{newAnswer}</p>
+        <button
+          onClick={(event) => {
+            event.preventDefault();
+            addCreatedCard();
+          }}
+        >
+          Add card to home
+        </button>
+        <button>Add card to bookmarks</button>
+        <button>Delete card</button>
+      </article>
+    );
+  };
+  console.log(createdCard);
   return (
     <section
       className="page"
       id="create-page"
       data-js="page-create"
-      style={{ display: props.page === "create" ? "block" : "none" }}
+      style={{ display: page === "create" ? "block" : "none" }}
     >
       <h2>Here you can create your own question cards</h2>
-      <form className="create-form">
-        <label className="label-add-question" htmlFor="add-question">
+      <form
+        className="create-form"
+        onSubmit={(event) => {
+          event.preventDefault();
+          onSubmitCreatedCard();
+        }}
+      >
+        <label htmlFor="add-question" className="label-add-question">
           What question would you like to add?
         </label>
         <input
-          onChange={props.handleChangeQuestionInput}
+          onChange={handleQuestionInput}
           id="add-question"
           type="text"
           placeholder="Please type your question..."
           name="add-question"
           // value="add-question"
         />
-        <label className="label-add-answer" htmlFor="add-answer">
+        <label htmlFor="add-answer" className="label-add-answer">
           What is the answer to your question?
         </label>
         <input
-          onChange={props.handleChangeAnswerInput}
+          onChange={handleAnswerInput}
           id="add-answer"
           type="text"
           placeholder="Please type your answer..."
@@ -49,20 +107,16 @@ export default function CreatePage(props) {
             #javascript
           </label>
         </div>
-        <button className="add-card" onClick={props.addCard}>
+        <button
+          className="add-card"
+          onClick={(event) => {
+            event.preventDefault();
+            createCard();
+          }}
+        >
           Create card
         </button>
       </form>
-      <ul className="no-list">
-        {/* <NewCard
-          cardsList={props.cardsList}
-          isBookmarked={props.isBookmarked}
-          question={props.newQuestion}
-          answer={props.newAnswer}
-          hide={props.hide}
-          setHide={props.setHide}
-        /> */}
-      </ul>
     </section>
   );
 }

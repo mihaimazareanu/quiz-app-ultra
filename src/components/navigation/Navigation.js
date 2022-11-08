@@ -5,8 +5,11 @@ function Navigation({ page, handleClickPage }) {
     <nav className="navbar">
       <a
         className="link-home"
-        href="#home-page"
-        onClick={() => handleClickPage("home")}
+        href=""
+        onClick={(event) => {
+          event.preventDefault();
+          handleClickPage("home");
+        }}
         style={{
           backgroundColor: page === "home" ? "red" : "sandybrown",
         }}
@@ -23,8 +26,11 @@ function Navigation({ page, handleClickPage }) {
       </a>
       <a
         className="link-bookmark"
-        href="#bookmark-page"
-        onClick={() => handleClickPage("bookmark")}
+        href=""
+        onClick={(event) => {
+          event.preventDefault();
+          handleClickPage("bookmark");
+        }}
         style={{
           backgroundColor: page === "bookmark" ? "red" : "sandybrown",
         }}
@@ -41,8 +47,11 @@ function Navigation({ page, handleClickPage }) {
       </a>
       <a
         className="link-form"
-        href="#create-page"
-        onClick={() => handleClickPage("create")}
+        href=""
+        onClick={(event) => {
+          event.preventDefault();
+          handleClickPage("create");
+        }}
         style={{
           backgroundColor: page === "create" ? "red" : "sandybrown",
         }}
@@ -59,8 +68,11 @@ function Navigation({ page, handleClickPage }) {
       </a>
       <a
         className="link-profile"
-        href="#profile-page"
-        onClick={() => handleClickPage("profile")}
+        href=""
+        onClick={(event) => {
+          event.preventDefault();
+          handleClickPage("profile");
+        }}
         style={{
           backgroundColor: page === "profile" ? "red" : "sandybrown",
         }}

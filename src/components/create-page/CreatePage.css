@@ -26,3 +26,8 @@
 .add-card {
   align-self: center;
 }
+
+#add-question,
+#add-answer {
+  width: 100%;
+}

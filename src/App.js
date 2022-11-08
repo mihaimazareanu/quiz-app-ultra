@@ -28,6 +28,16 @@ function App() {
     );
   };
 
+  const handleNewCard = (newCard) => {
+    setCards([
+      ...cards,
+      {
+        ...newCard,
+      },
+    ]);
+    console.log(newCard);
+  };
+
   return (
     <div className="App">
       <main>
@@ -42,14 +52,10 @@ function App() {
           cards={cards}
           onToggleBookmark={handleToggleBookmark}
         />
-        <CreatePage page={page} setPage={setPage} />
+        <CreatePage page={page} cards={cards} onNewCard={handleNewCard} />
         <Profile page={page} setPage={setPage} />
       </main>
-      <Navigation
-        page={page}
-        setPage={setPage}
-        handleClickPage={handleClickPage}
-      />
+      <Navigation page={page} handleClickPage={handleClickPage} />
     </div>
   );
 }

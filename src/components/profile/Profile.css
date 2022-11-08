@@ -1,10 +1,7 @@
-.profile-page {
-  border: 1px solid #000;
-  border-radius: 10px;
-  height: 20rem;
+#profile-page {
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: hotpink;
   margin: 1rem;
 }
